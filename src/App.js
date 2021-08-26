@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
 import './styles/App.css';
 import AppPosts from './pages/AppPosts';
 import AddPost from './pages/AddPost';
+import DetailedPost from './pages/DetailedPost';
 
 function App() {
   return (
@@ -17,6 +18,9 @@ function App() {
           </Route>
           <Route exact path="/add">
             <AddPost />
+          </Route>
+          <Route path="/posts/:id">
+            <DetailedPost />
           </Route>
         </Switch>
       </Router>

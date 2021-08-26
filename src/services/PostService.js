@@ -26,6 +26,16 @@ class PostService {
       console.log('Error', error);
     }
   }
+
+  async get(id) {
+    try {
+      const { data } = await this.apiClient.get(`posts/${id}`)
+
+      return data;
+    } catch (error) {
+      console.log('Error', error)
+    }
+  }
 }
 
 export default new PostService();

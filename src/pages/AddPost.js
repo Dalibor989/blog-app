@@ -1,7 +1,10 @@
 import React, {useState, useEffect} from "react";
 import postService from "../services/PostService";
+import { useHistory } from 'react-router-dom';
 
 function AddPost() {
+  const history = useHistory();
+
   const [newPost, setNewPost] = useState({
     title: '',
     text: '',
@@ -10,12 +13,14 @@ function AddPost() {
   const createPost = async (e) => {
     e.preventDefault();
 
-    postService.add(newPost);
+    await postService.add(newPost);
 
     setNewPost({
       title: '',
       text: '',
-    })
+    });
+
+    history.push('/posts');
   }
 
   const handleTitleChange = (e) => {
