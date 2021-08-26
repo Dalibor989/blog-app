@@ -19,7 +19,7 @@ function AppPosts() {
       <h3>Posts</h3>
       <ul>
         {posts.map((post) => (
-          <li key={id}>{post.title}</li>
+          <li key={post.id}>{post.title}</li>
         ))}
       </ul>
     </div>

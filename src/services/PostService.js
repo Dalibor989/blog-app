@@ -17,6 +17,15 @@ class PostService {
       console.log('Error', error);
     }
   }
+
+  async add(newPost) {
+    try {
+      const { data } = await this.apiClient.post('posts', newPost);
+      return data;
+    } catch (error) {
+      console.log('Error', error);
+    }
+  }
 }
 
 export default new PostService();
