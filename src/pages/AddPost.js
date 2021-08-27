@@ -47,8 +47,8 @@ function AddPost() {
   return (
     <div>
       <form onSubmit={createPost}>
-        <input type="text" placeholder="title" value={newPost.title} onChange={handleTitleChange}/>
-        <input type="text" placeholder="text" value={newPost.text} onChange={handleTextChange}/>
+        <input required minLength="2" type="text" placeholder="title" value={newPost.title} onChange={handleTitleChange}/>
+        <input required maxLength="300" type="text" placeholder="text" value={newPost.text} onChange={handleTextChange}/>
         <button>Post</button>
         <button type="button" onClick={reset}>Reset</button>
       </form>
