@@ -25,6 +25,10 @@ function AppPosts() {
     history.push(`edit/${id}`)
   }
 
+  const deletePost = async (id) => {
+    await postService.delete(id);
+  }
+
   return (
     <div>
       <h3>Posts</h3>
@@ -37,6 +41,7 @@ function AppPosts() {
             text={post.text}
             handleViewPost={viewPost}
             handleEditPost={editPost}
+            handleDeletePost={deletePost}
           />
         ))}
       </ul>

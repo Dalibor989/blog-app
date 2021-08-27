@@ -46,6 +46,16 @@ class PostService {
       console.log('Error', error);
     }
   }
+
+  async delete(id) {
+    try {
+      const { data } = await this.apiClient.delete(`posts/${id}`);
+
+      return data;
+    } catch (error) {
+      console.log('Error', error);
+    }
+  }
 }
 
 export default new PostService();

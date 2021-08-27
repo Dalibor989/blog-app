@@ -6,6 +6,7 @@ function SinglePost({
   text,
   handleViewPost,
   handleEditPost,
+  handleDeletePost,
 }) {
   return (
     <li>
@@ -13,6 +14,7 @@ function SinglePost({
       <span><p>{text}</p></span>
       <button onClick={() => handleViewPost(id)}>View Post</button>
       <button onClick={() => handleEditPost(id)}>Edit</button>
+      <button onClick={() => handleDeletePost(id)}>Delete</button>
     </li>
   )
 }
