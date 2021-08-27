@@ -37,12 +37,20 @@ function AddPost() {
     })
   }
 
+  const reset = () => {
+    setNewPost({
+      title: '',
+      text: '',
+    })
+  }
+
   return (
     <div>
       <form onSubmit={createPost}>
         <input type="text" placeholder="title" value={newPost.title} onChange={handleTitleChange}/>
         <input type="text" placeholder="text" value={newPost.text} onChange={handleTextChange}/>
         <button>Post</button>
+        <button type="button" onClick={reset}>Reset</button>
       </form>
     </div>
   )
