@@ -47,9 +47,9 @@ class PostService {
     }
   }
 
-  async delete(id) {
+  async delete(postId) {
     try {
-      const { data } = await this.apiClient.delete(`posts/${id}`);
+      const { data } = await this.apiClient.delete(`posts/${postId}`);
 
       return data;
     } catch (error) {

@@ -25,8 +25,11 @@ function AppPosts() {
     history.push(`edit/${id}`)
   }
 
-  const deletePost = async (id) => {
-    await postService.delete(id);
+  const deletePost = async (postId) => {
+    const data = await postService.delete(postId);
+
+    setPost(posts.filter(({id}) => id !== postId));
+    
   }
 
   return (
