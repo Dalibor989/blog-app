@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
 import postService from "../services/PostService";
+import AddComment from '../components/AddComment';
 
 function DetailedPost() {
   const { id } = useParams();
@@ -27,6 +28,12 @@ function DetailedPost() {
     <div>
       <h3>{newPost.title}</h3>
       <p>{newPost.text}</p>
+
+      <div>
+          <AddComment 
+            postId={id}
+          />
+      </div>
     </div>
   )
 }
