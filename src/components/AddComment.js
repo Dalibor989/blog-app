@@ -1,8 +1,10 @@
-import React, {useState, useEffect} from "react";
+import React, { useState } from "react";
 import postService from "../services/PostService";
 
 function AddComment({postId}) {
-  const [comment, setComment] = useState({});
+  const [comment, setComment] = useState({
+    text: ''
+  });
 
   const addComment = async (e) => {
     e.preventDefault();
@@ -24,7 +26,7 @@ function AddComment({postId}) {
   return (
     <div>
       <form onSubmit={addComment}>
-        <input required type="text" key={comment.id} onChange={handleCommentChange} placeholder="comment..."/>
+        <input required type="text" key={comment.id} value={comment.text} onChange={handleCommentChange} placeholder="comment..."/>
         <button>Comment</button>
       </form>
     </div>

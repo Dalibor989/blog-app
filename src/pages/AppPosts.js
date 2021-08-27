@@ -26,7 +26,7 @@ function AppPosts() {
   }
 
   const deletePost = async (postId) => {
-    const data = await postService.delete(postId);
+    await postService.delete(postId);
 
     setPost(posts.filter(({id}) => id !== postId));
     
@@ -45,6 +45,7 @@ function AppPosts() {
             handleViewPost={viewPost}
             handleEditPost={editPost}
             handleDeletePost={deletePost}
+            comments={post.comments}
           />
         ))}
       </ul>

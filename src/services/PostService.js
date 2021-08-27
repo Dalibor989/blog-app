@@ -11,7 +11,7 @@ class PostService {
 
   async getAll() {
     try {
-      const { data } = await this.apiClient.get('posts');
+      const { data } = await this.apiClient.get('posts?filter={"include" : ["comments"]}');
       return data;
     } catch (error) {
       console.log('Error', error);

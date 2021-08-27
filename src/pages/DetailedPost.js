@@ -2,15 +2,17 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
 import postService from "../services/PostService";
 import AddComment from '../components/AddComment';
+import useFormattedDate from '../hooks/useFormattedDate';
 
 function DetailedPost() {
   const { id } = useParams();
-  const post = postService.get(id);
-
+  
   const [newPost, setNewPost] = useState({
     title: '',
     text: '',
   })
+  
+  const dateFormat = useFormattedDate(newPost.createdAt)
 
   useEffect(() => {
     const fetchPost = async () => {
@@ -28,6 +30,7 @@ function DetailedPost() {
     <div>
       <h3>{newPost.title}</h3>
       <p>{newPost.text}</p>
+      <p>{dateFormat}</p>
 
       <div>
           <AddComment 
