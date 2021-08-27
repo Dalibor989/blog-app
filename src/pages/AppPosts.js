@@ -21,6 +21,10 @@ function AppPosts() {
     history.push(`posts/${id}`);
   };
 
+  const editPost = (id) => {
+    history.push(`edit/${id}`)
+  }
+
   return (
     <div>
       <h3>Posts</h3>
@@ -31,7 +35,8 @@ function AppPosts() {
             id={post.id}
             title={post.title}
             text={post.text}
-            handleEditPost={viewPost}
+            handleViewPost={viewPost}
+            handleEditPost={editPost}
           />
         ))}
       </ul>

@@ -22,6 +22,9 @@ function App() {
           <Route path="/posts/:id">
             <DetailedPost />
           </Route>
+          <Route path="/edit/:id">
+            <AddPost />
+          </Route>
         </Switch>
       </Router>
     </div>

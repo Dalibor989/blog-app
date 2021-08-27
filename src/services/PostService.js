@@ -36,6 +36,16 @@ class PostService {
       console.log('Error', error)
     }
   }
+
+  async edit(id, newPost) {
+    try {
+      const { data } = await this.apiClient.put(`posts/${id}`, newPost)
+
+      return data;
+    } catch (error) {
+      console.log('Error', error);
+    }
+  }
 }
 
 export default new PostService();
